@@ -25,12 +25,13 @@ public class ScreenManager : MonoBehaviour
   
     }
 
-
+    //By default only the initial screen is active.
     public void ShowScreen(ScreenType screen)
     {
 
         for (int i = 0; i < _Screens.Count; i++)
         {
+            //return true to the correspondent screen
             _Screens[i].SetActive(i == (int)screen);
         }
 
@@ -39,6 +40,7 @@ public class ScreenManager : MonoBehaviour
 
     public void CloseScreen()
     {
+        //Get back to the main screen and set false to the others
         ShowScreen(_StartingScreen);
     }
 

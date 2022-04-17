@@ -8,14 +8,14 @@ public class MainScreen : MonoBehaviour
     [SerializeField] private ScreenManager _screenManager = null;
     [SerializeField] private GameManager _GameManager = null;
 
-
+    //Tells the screen manager which screen should be active and deactivates the others
     public void OnUpgradeScreenClicked()
     {
 
         _screenManager.ShowScreen(ScreenType.Upgrade);
 
     }
-
+    //Tells...active and deactivates the others
     public void OnStoreScreenClicked()
     {
 
