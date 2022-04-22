@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float  _TimePerAutoUpdate = 1.0f;
     [SerializeField] private TMP_Text _CoinAmountText = null;
-    private int _CoinAmount = 0;
 
     //Variables of control: Controls the amount of points per click and also the amount automatically computed.
     private int _PointsPerClick = 1;
     private int _AutoPoints = 0;
+    private int _CoinAmount = 0;
 
     private float _TimeUntilNextUpdate = 0.0f;
 
