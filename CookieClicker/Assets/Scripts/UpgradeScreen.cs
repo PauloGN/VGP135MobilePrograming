@@ -20,15 +20,23 @@ public class UpgradeScreen : MonoBehaviour
     [SerializeField] private TMP_Text _UpgradeAutoButtonLevelText = null;
     [SerializeField] private TMP_Text _UpgradeButtonAmountText = null;
     [SerializeField] private TMP_Text _UpgradeAutoButtonAmountText = null;
+    [SerializeField] private Animator _animator = null;//cheaper
 
 
     //Get back to the main screen
     public void OnClose()
     {
+        _animator.SetTrigger("Close");
+    }
+
+    public void OnCloseFinishAnimation()
+    {
 
         _screenManager.CloseScreen();
 
     }
+
+
 
 
     // Start is called before the first frame update
@@ -38,6 +46,8 @@ public class UpgradeScreen : MonoBehaviour
         _UpgradeClickButton.interactable = _GameManager.CanAffordClickUpgrade();
         _UpgradeAutoButton.interactable = _GameManager.CanAffordAutoUpgrade();
         UpdateDisplay();
+
+        //GetComponent<Animator>(); this needs to iterate.
 
     }
 

@@ -1222,6 +1222,7 @@ GameObject:
   - component: {fileID: 3834172618035199454}
   - component: {fileID: 3834172618035199449}
   - component: {fileID: 8255718241344946705}
+  - component: {fileID: 2115600533776035449}
   m_Layer: 0
   m_Name: UpgradeScreen
   m_TagString: Untagged
@@ -1240,8 +1241,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7206088582105060473}
   - {fileID: 4170745301936426827}
+  - {fileID: 7206088582105060473}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1310,6 +1311,26 @@ MonoBehaviour:
   _UpgradeAutoButtonLevelText: {fileID: 4111431548212716253}
   _UpgradeButtonAmountText: {fileID: 738030260}
   _UpgradeAutoButtonAmountText: {fileID: 1654926645}
+  _animator: {fileID: 2115600533776035449}
+--- !u!95 &2115600533776035449
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834172618035199451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 990da074c15eb8240bc76419a5ac04d5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6001351822183307813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1362,7 @@ RectTransform:
   - {fileID: 941096604}
   - {fileID: 1671362410}
   m_Father: {fileID: 3834172618035199448}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1406,7 +1427,7 @@ RectTransform:
   m_Children:
   - {fileID: 2080249531820174391}
   m_Father: {fileID: 3834172618035199448}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
