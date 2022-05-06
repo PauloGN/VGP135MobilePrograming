@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float maxVelocity;
     [SerializeField] private float rotationSpeed;
 
-    [SerializeField] private new Rigidbody rigidbody = null;
+    [SerializeField] private Rigidbody playerRB;
 
     private Camera mainCamera;
     private Vector3 movementDirection;
@@ -38,10 +38,10 @@ public class PlayerMovement : MonoBehaviour
         }
      
 
-        rigidbody.AddForce(movementDirection * forceMagnitude, ForceMode.Force);
+        playerRB.AddForce(movementDirection * forceMagnitude, ForceMode.Force);
 
         //Setting a limit of maximum speed to be applied by the force mode
-        rigidbody.velocity =  Vector3.ClampMagnitude(rigidbody.velocity, maxVelocity);
+        playerRB.velocity =  Vector3.ClampMagnitude(playerRB.velocity, maxVelocity);
 
     }
 
@@ -109,12 +109,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void RotateToFaceDirection()
     {
-       if(rigidbody.velocity == Vector3.zero)
+       if(playerRB.velocity == Vector3.zero)
         {
             return;
         }
         //Gets the rotation based on the direction and y axis (Vector.back considered the one going out of the screen)
-        Quaternion targetRotation = Quaternion.LookRotation(rigidbody.velocity, Vector3.back);
+        Quaternion targetRotation = Quaternion.LookRotation(playerRB.velocity, Vector3.back);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }

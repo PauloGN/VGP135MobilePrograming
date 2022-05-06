@@ -8,9 +8,9 @@ public class ScoreTrack : MonoBehaviour
     [SerializeField] private TMP_Text scoreTxt;
     [SerializeField] private float scoremultiplyer = 0.0f;
 
-    [SerializeField] GameObject playerREF;
+   // [SerializeField] GameObject playerREF;
     [SerializeField] Spawner spawnerREF;
-    [SerializeField] private float getHarderTimer = 30.0f;
+    [SerializeField] private float gettingHarderTimer = 30.0f;
 
     //variables to control the increse of the score and difficulty of the game
 
@@ -24,7 +24,7 @@ public class ScoreTrack : MonoBehaviour
         updateScoreText();
 
         getHarderDelay += Time.deltaTime;
-        if (getHarderDelay >= getHarderTimer)
+        if (getHarderDelay >= gettingHarderTimer)
         {
             spawnerREF.GettingHarder();
             getHarderDelay = 0.0f;

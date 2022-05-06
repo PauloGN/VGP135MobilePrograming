@@ -1881,6 +1881,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529538702}
   m_CullTransparentMesh: 1
+--- !u!1 &1545606284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4985503968367978929, guid: 30b5417ae5cc2e54baaa52dcaf904b94, type: 3}
+  m_PrefabInstance: {fileID: 4985503968704221262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1545606288 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4985503968367979084, guid: 30b5417ae5cc2e54baaa52dcaf904b94, type: 3}
+  m_PrefabInstance: {fileID: 4985503968704221262}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1669475041
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,11 +2615,19 @@ PrefabInstance:
     - target: {fileID: 1196161956725441493, guid: 84a7537eb43bf9f45930837b304541bf, type: 3}
       propertyPath: playerREF
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1545606284}
     - target: {fileID: 1196161956725441493, guid: 84a7537eb43bf9f45930837b304541bf, type: 3}
       propertyPath: spawnerREF
       value: 
       objectReference: {fileID: 1350318299}
+    - target: {fileID: 1196161956725441493, guid: 84a7537eb43bf9f45930837b304541bf, type: 3}
+      propertyPath: getHarderTimer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1196161956725441493, guid: 84a7537eb43bf9f45930837b304541bf, type: 3}
+      propertyPath: gettingHarderTimer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1196161956725441499, guid: 84a7537eb43bf9f45930837b304541bf, type: 3}
       propertyPath: m_Name
       value: ScoreSys
@@ -2683,6 +2701,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4985503968367979087, guid: 30b5417ae5cc2e54baaa52dcaf904b94, type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 1545606288}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b5417ae5cc2e54baaa52dcaf904b94, type: 3}
 --- !u!1001 &6959661903459626842
