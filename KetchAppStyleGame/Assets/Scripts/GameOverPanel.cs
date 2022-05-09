@@ -13,10 +13,20 @@ public class GameOverPanel : MonoBehaviour
     static private int[] scores = { 0, 0, 0, 0, 0}; 
     private int currentScore = 0;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
+        LoadSaveGame();
+    }
 
+    private void LoadSaveGame()
+    {
+        if (SaveGameData.Instance.LoadGameScore()._scores != null)
+        {
+            for (int i = 0; i < scores.Length; i++)
+            {       
+                scores[i] = SaveGameData.Instance.LoadGameScore()._scores[i];
+            }
+        }
     }
 
     public void OnGameOver()
@@ -25,6 +35,8 @@ public class GameOverPanel : MonoBehaviour
         scoreSysREF.SetActive(false);
         spawner.SetActive(false);
         gameOverPanel.SetActive(true);
+
+        SaveGameData.Instance.SaveToFile(scores);
     }
     public void RestartGame()
     {
@@ -77,6 +89,8 @@ public class GameOverPanel : MonoBehaviour
             scoresTxt[i].text = $"Position {i + 1}: " + scores[i].ToString();
 
         }
+
+        SaveGameData.Instance.SaveToFile(scores);
 
     }
 
