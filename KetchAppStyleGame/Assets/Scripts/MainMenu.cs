@@ -15,9 +15,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        if(SaveGameData.Instance.LoadGameScore()._scores.Length >= 1)
+        if (SaveGameData.Instance.LoadGameScore()._scores.Length >= 1)
         {
-          scoreTxt.text = "Leader Score: " + SaveGameData.Instance.LoadGameScore()._scores[0].ToString();
+            scoreTxt.text = "Leader Score: " + SaveGameData.Instance.LoadGameScore()._scores[0].ToString();
         }
     }
 

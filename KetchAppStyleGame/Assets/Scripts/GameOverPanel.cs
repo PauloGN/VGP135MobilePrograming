@@ -15,7 +15,7 @@ public class GameOverPanel : MonoBehaviour
 
     private void Start()
     {
-        LoadSaveGame();
+       LoadSaveGame();
     }
 
     private void LoadSaveGame()
@@ -68,7 +68,6 @@ public class GameOverPanel : MonoBehaviour
             scoresTxt[i].text = $"Position {i + 1}: " + scores[i].ToString();
 
         }
-
 
     }
     

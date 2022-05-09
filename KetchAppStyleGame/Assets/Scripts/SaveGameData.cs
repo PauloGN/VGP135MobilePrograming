@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
+// The game data to be saved
 [Serializable]
 public struct GameData
 {
@@ -17,10 +18,14 @@ public class SaveGameData:MonoBehaviour
 
     public GameData gameData;
     private const string saveName = "SaveGame";
-    private const string directoryName = "Saves";
-
-    //Singleton objects
+    
+    //============================= Singleton objects ==============================================\\
     private static SaveGameData _instance;
+
+    private string GetFullFilePath()
+    {
+        return Application.persistentDataPath + "/" + saveName;
+    }
 
     public static SaveGameData Instance
     {
@@ -41,26 +46,21 @@ public class SaveGameData:MonoBehaviour
         _instance = this;
     }
 
+    //============================= End Singleton functions ==============================================\\
 
     // After each game over call this to save the best scores
     public void SaveToFile(int [] scores)
     {
-        //To save the data into a directory it must be created first
-        if (!Directory.Exists(directoryName))
-        {
-            Directory.CreateDirectory(directoryName);
-        }
-        
+     
+        //Chose the save location
+        FileStream saveFile = File.Create(GetFullFilePath());
         //The formater will convert the data into a binary file
         BinaryFormatter formatter = new BinaryFormatter();
-
-        //Chose the save location
-        FileStream saveFile = File.Create(directoryName + "/" + saveName + ".bin");
 
 
         //copping data
 
-        if(gameData._scores == null)
+        if (gameData._scores == null)
         {
             gameData._scores = new int[scores.Length];
         }
@@ -76,7 +76,7 @@ public class SaveGameData:MonoBehaviour
         saveFile.Close();
 
         //Success message debug
-       // Debug.Log("Game Saved to " + Directory.GetCurrentDirectory().ToString() + "/Saves/" + saveName + ".bin");
+        //Debug.Log("Game Saved to " + GetFullFilePath());
 
     }
 
@@ -87,14 +87,14 @@ public class SaveGameData:MonoBehaviour
     public GameData LoadGameScore()
     {
 
-        if (Directory.Exists(directoryName) && File.Exists(directoryName + "/" + saveName + ".bin"))
+        if (File.Exists(GetFullFilePath()))
         {
 
             //Converte Binary file back into readable data for unity game
             BinaryFormatter formatter = new BinaryFormatter();
 
             //Chosing the saved file to open
-            FileStream saveFile = File.Open(directoryName + "/" + saveName + ".bin", FileMode.Open);
+            FileStream saveFile = File.Open(GetFullFilePath(), FileMode.Open);
 
             //Convert the file data into 'save game data formate' to use in game
             GameData loadData = (GameData)formatter.Deserialize(saveFile);
