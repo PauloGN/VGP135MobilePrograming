@@ -76,8 +76,7 @@ public class SaveGameData:MonoBehaviour
         saveFile.Close();
 
         //Success message debug
-
-        Debug.Log("Game Saved to " + Directory.GetCurrentDirectory().ToString() + "/Saves/" + saveName + ".bin");
+       // Debug.Log("Game Saved to " + Directory.GetCurrentDirectory().ToString() + "/Saves/" + saveName + ".bin");
 
     }
 
