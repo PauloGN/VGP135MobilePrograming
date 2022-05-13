@@ -126,3 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51d207b72c89684bb36982d3c63cf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion:
+  - {fileID: 4080932952356647222, guid: 1f26037b93c7d1e4eae22179545897c2, type: 3}
+  - {fileID: 8170367624628411689, guid: eb76ce85cde338642809bf72423e7d99, type: 3}
+  - {fileID: 3251959457965131999, guid: 13151b12f0c4a0e4a91e78f4fd8de059, type: 3}
