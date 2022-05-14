@@ -128,9 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 1196161956838008292}
   scoremultiplyer: 1
-  playerREF: {fileID: 0}
   spawnerREF: {fileID: 0}
-  getHarderTimer: 15
+  gettingHarderTimer: 15
 --- !u!1 &1196161956838008298
 GameObject:
   m_ObjectHideFlags: 0
