@@ -22,6 +22,10 @@ public class PlayerHealth : MonoBehaviour
 
     [HideInInspector]public PlayerState _playerState;
 
+    private int countPwUp = 0;
+
+    
+
     private void Start()
     {
         _playerState = PlayerState.normal;
@@ -57,8 +61,9 @@ public class PlayerHealth : MonoBehaviour
                 break;
             case PlayerState.powerUp:
 
+                countPwUp++;
                 indicator.SetActive(true);
-                StartCoroutine(PoweruoCountDown());
+                StartCoroutine(PowerupCountDown());
 
                 break;
             default:
@@ -67,10 +72,17 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-    IEnumerator PoweruoCountDown()
+    IEnumerator PowerupCountDown()
     {
-        yield return new WaitForSeconds(5);//starts a counter internally in this case 5 seconds after the time it will execute the next line of code
-        SetPlayerstate(PlayerState.normal);
+        
+        yield return new WaitForSeconds(powerUpTimer);//starts a counter internally in this case 5 seconds after the time it will execute the next line of code
+        countPwUp--;
+        if(countPwUp <= 0)
+        {
+            SetPlayerstate(PlayerState.normal);
+            countPwUp = 0;
+        }
+
     }
 
 
