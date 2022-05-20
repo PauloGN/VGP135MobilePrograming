@@ -6,7 +6,9 @@ using TMPro;
 public class GameOverPanel : MonoBehaviour
 {
     [SerializeField] private TMP_Text[] scoresTxt;
+    [SerializeField] private TMP_Text currentScoreText;
     [SerializeField] private GameObject gameOverPanel = null;
+    [SerializeField] private GameObject resetPanel = null;
     [SerializeField] private GameObject scoreSysREF = null;
     [SerializeField] private GameObject spawner = null;
 
@@ -40,16 +42,20 @@ public class GameOverPanel : MonoBehaviour
     }
     public void RestartGame()
     {
-        SceneManager.LoadScene(1);
+       AdsManager.instance.ShowBunnerfor_x_Seconds();
+       SceneManager.LoadScene(1);
     }
     public void OpenMainMenu()
     {
+        AdsManager.instance.ShowInterstitialAd();
+        AdsManager.instance.ShowBanner();
         SceneManager.LoadScene(0);
     }
 
     public void UpdateHighestScore()
     {
         currentScore = scoreSysREF.GetComponent<ScoreTrack>().GetScore();
+        currentScoreText.text =$"Game Over current score: {currentScore}" ;
         for (int i = 0; i < scores.Length; i++)
         {
             if(scores[i] <= currentScore)
@@ -69,12 +75,28 @@ public class GameOverPanel : MonoBehaviour
 
         }
 
+
     }
     
 
     public void ResetScores()
     {
+        
+        gameOverPanel.SetActive(false);
+        resetPanel.SetActive(true);
 
+    }
+
+    public void OnNoResetScores()
+    {
+        gameOverPanel.SetActive(true);
+        resetPanel.SetActive(false);
+    }
+
+
+    public void OnYesResetScores()
+    {
+        AdsManager.instance.ShowInterstitialAd();
         for (int i = 0; i < scores.Length; i++)
         {
 
@@ -91,6 +113,10 @@ public class GameOverPanel : MonoBehaviour
 
         SaveGameData.Instance.SaveToFile(scores);
 
+        gameOverPanel.SetActive(true);
+        resetPanel.SetActive(false);
+
     }
+
 
 }

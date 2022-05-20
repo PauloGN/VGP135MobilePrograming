@@ -51,12 +51,12 @@ public class PlayerMovement : MonoBehaviour
         //checks if the screen was touched
         if (Touchscreen.current.primaryTouch.press.isPressed)
         {
-            //gets the touch position wicth is a vector 2
+            //gets the touch position on the screen wicth is a vector 2
             Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
             //Converts the touch position from the pixel units of the screen to world position (Unity Cartesian plane)
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(touchPosition);
 
-            //getting a new vector pointing the direction that the spaceship shoul move to
+            //getting a new vector pointing the direction that the spaceship should move to
             movementDirection = transform.position - worldPosition;
             movementDirection.z = 0.0f;
             movementDirection.Normalize();
