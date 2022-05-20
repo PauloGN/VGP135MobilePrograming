@@ -6,7 +6,7 @@ public class AsteroidB : MonoBehaviour
 {
 
     [SerializeField] private GameObject[] explosion;
-
+       
 
     private void OnTriggerEnter(Collider other)
     {

@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 6959661904004403617}
   - component: {fileID: 6959661904004403616}
   - component: {fileID: 6959661904004403619}
+  - component: {fileID: 815559321}
+  - component: {fileID: 815559322}
+  - component: {fileID: 815559323}
+  - component: {fileID: 815559324}
+  - component: {fileID: 815559320}
   m_Layer: 0
   m_Name: Outer space
   m_TagString: Untagged
@@ -4804,3 +4809,67 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &815559321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959661904004403618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.966377, y: 27.996513, z: 2.5260003}
+  m_Center: {x: 3.202353, y: -0.16481781, z: 29.379017}
+--- !u!65 &815559322
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959661904004403618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 23.534199, y: 28.307453, z: 4.4782276}
+  m_Center: {x: 1.3267393, y: 0.8890133, z: -4.1627846}
+--- !u!65 &815559323
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959661904004403618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 20.967857, y: 4.0644913, z: 33.50257}
+  m_Center: {x: 2.7920084, y: -12.771919, z: 13.675457}
+--- !u!65 &815559324
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959661904004403618}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 25.744831, y: 3.27532, z: 33.085117}
+  m_Center: {x: 0.018036842, y: 13.048327, z: 14.099455}
+--- !u!114 &815559320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959661904004403618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a69d10a3c8608428dd48fc0589d1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
