@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
+        movementDirection = Vector3.zero;
     }
 
     // Update is called once per frame

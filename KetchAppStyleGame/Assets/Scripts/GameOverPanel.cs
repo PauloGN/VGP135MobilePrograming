@@ -33,7 +33,7 @@ public class GameOverPanel : MonoBehaviour
 
     public void OnGameOver()
     {
-        GetComponent<RewardedAdsButton>().LoadAd();
+       // GetComponent<RewardedAdsButton>().LoadAd();
         UpdateHighestScore();
         scoreSysREF.SetActive(false);
         spawner.SetActive(false);
